@@ -1,0 +1,30 @@
+<div class="create_account_container">
+    <div class="key_icons">
+        <div class="c_button_icon"> </div>
+        <div class="a_button_icon"> </div>
+    </div>
+    <form class="create_account_form_container" method="POST" action="/createaccount">
+        <h1 class="create-account-page-title">Create Account</h1>
+        <section class="login_input_section">
+            <input class="login_input" type="text" name="fullname" autocomplete="off" required>
+            <label for="Full-Name" class="label-name"><span class="content-name" style="top: 0;">Full Name</span></label>
+        </section>
+        <section class="login_input_section">
+            <input class="login_input" type="text" name="Email" autocomplete="off" required>
+            <label for="Email" class="label-email"><span class="content-email" style="top: 0;">Email</span></label>
+        </section>
+        <section class="login_input_section">
+            <input class="login_input" type="password" name="password" autocomplete="off" required>
+            <label for="Password" class="label-password"><span class="content-password" style="top: 0;">Password</span></label>
+        </section>
+        <section class="login_input_section">
+            <input class="login_input" type="password" name="confirmpassword" autocomplete="off" required>
+            <label for="confirm-Password" class="label-password"><span class="content-confirm-password" style="top: 0;">Confirm Password</span></label>
+        </section>
+        
+        <div class="login_button_container">
+            <button class="login_button" onclick="location.href='/login'">Back</button>
+            <button class="login_button" type="submit" name="create" >Create Account</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,60 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+@import "./globalStylesPage";
+
+#statsPage__tab-wrap {
+    @include boxStyle;
+    height: 100%;
+}
+
+
+.stats-container {
+    width: 85%;
+    position: relative;
+    left: 5%;
+    top: 5%;
+    margin: 0 auto;
+    height: 85%;
+}
+
+
+
+tr td {
+    width: 50rem;
+    height: 2rem;
+}
+
+
+.stats-content {
+    min-height: 800px;
+    max-height: 925px;
+    overflow: scroll;
+}
+
+
+
+
+
+
+// drop
+
+
+.top-line {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    // content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    height: 8.5rem;
+    border-bottom: solid 2px #0d141f;
+    width: 100%;
+    z-index: -1;
+    color: black;
+    background-color: $nav-bar-icon-color;
+
+}
+
+

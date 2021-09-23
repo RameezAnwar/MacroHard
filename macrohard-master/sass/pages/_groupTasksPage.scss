@@ -1,0 +1,77 @@
+@import "../abstracts/variables";
+@import "./globalStylesPage";
+@import "../abstracts/mixins";
+
+.section__table {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 12%;
+    top: 8%;
+    width: 85%;
+    height: 75vh;
+    @include boxStyle;
+
+
+    &-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+        height: 100%;
+        width: 100%;
+        background-color: $section-base-color;
+        margin: 0 auto;
+        overflow-y: scroll;
+        min-height: 99%;
+        max-height: 99%;
+        
+    }
+
+    &-todo {
+        margin-bottom: 25px;
+    }
+    
+}
+
+.member {
+    display: inline-block;
+    margin: 0 2.5rem;
+    &-td {
+        overflow-x: scroll;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+    
+}
+#tasks-page-title {
+    font-size: 4rem;
+    position: absolute;
+    top: 4%;
+    left: 16%;
+    color: gold;
+}
+
+
+
+.add-task-btn {
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    width: 40%;
+    font-size: 2.5rem;
+}
+
+
+.addRemoveSelfGroup {
+    position: absolute;
+    // bottom: 4.5%;
+    left: 17%;
+    top: 92%;
+    
+}
+

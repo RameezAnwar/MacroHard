@@ -1,0 +1,42 @@
+@import "../abstracts/variables";
+@import "./globalStylesPage";
+@import "../abstracts/mixins";
+
+.groups-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 85%;
+    height: 75vh;
+    position: absolute;
+    left: 12%;
+    top: 8%;
+    @include boxStyle;
+    overflow-y: scroll;
+
+}
+
+#groups-page-title {
+    font-size: 4rem;
+    position: absolute;
+    top: 4%;
+    left: 14%;
+    margin: 0 auto;
+    color: gold;
+}
+
+.add-group-btn {
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    width: 40%;
+    font-size: 2.5rem;
+}
+
+.html_plus {
+    margin-left: 2rem;
+    font-size: 2.5rem;
+    
+    
+}

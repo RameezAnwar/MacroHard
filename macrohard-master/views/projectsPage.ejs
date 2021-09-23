@@ -1,0 +1,82 @@
+<%- include('partials/singleNav', {userId})  %> 
+<h1 id="projects-page-title">Assigned Projects</h1>
+<div class="projects-container">
+    <% if (obj.length == 0) { %>
+        <div style="font-size: 4rem; font-weight: bold;">NO PROJECTS UNDER THIS ACCOUNT</div>
+    <% } %>
+    <% obj.forEach(proj => { %>
+        <div class="card">
+            <div class="card__side card__side--front">
+                <div class="card__picture"></div>
+                <h4 class="card__heading"><%= proj.name %></h4>
+                <div class="card__details">
+                    <ul>
+                        <li>Due: <%= proj.dueDate %></li>
+                        <li>Members: <%= proj.memberCount %></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card__side card__side--back">
+                <div class="card__cta">
+                    <div class="card__motivation"><%= proj.motivation %></div>
+                    <a href="/user/<%= userId %>/<%= proj.id %>/groups" class="btn btn__large" style="background-color: gold; border: 2.5px solid black;">Enter Project!</a>
+                </div>
+            </div>
+        </div>
+
+        
+    <% }) %>
+
+</div>
+<% if (isFaculty) { %>
+    <a href="#" data-popup-target="#addProj" class="btn btn__large add-proj-btn" style="background-color: gold; border: 2.5px solid black;">ADD PROJECT<span class="html_plus">&plus;</span></a>
+<% } %>
+
+<div class="popup" id="addProj">
+    <div class="popup__header">
+        <div class="popup__header-title">Add Project:</div>
+        <button data-close-button class="popup__header-close-button">&times;</button>
+    </div>
+    <div class="popup__body">
+        <form action="/user/<%= userId %>/projects/addproject" method="POST">
+            <fieldset>
+                <label for="projName">Project Name:
+                    <input type="text" name="projName"  style="padding: 1.5rem;" required pattern="\S(.*\S)?">
+                </label>
+
+                <label for="dueDate" >Due Date:
+                    <input type="date" name="dueDate" id  style="padding: 1.5rem; background-color: white;" required>
+                </label>
+                
+                <label for="projDescription">Project Description:   
+                </label>
+                <textarea name="projDescription" cols="60" rows="20" style="width: 100%; padding: 1.5rem; border: 1px solid black;" required pattern="\S(.*\S)?"></textarea>
+
+
+                
+                <input type="submit" name="submit" value="ADD" id="submit" class="btn btn__large" style="background-color: gold; border: 2.5px solid black; border-radius: 20rem;">
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div id="overlay"></div>
+
+<script src="/js/popup.js" defer></script>
+<script defer>
+    // const setBackground = () => {
+    //     let cards = document.querySelectorAll('.card__side--back');
+    //     cards.forEach(card => {
+    //         card.style.backgroundColor = getRandomColor();
+    //     });
+    // }
+
+    // document.body.onload = setBackground;
+    // function getRandomColor() {
+    //     const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    //     return "#" + randomColor;
+    // }
+    
+</script>
+
+
